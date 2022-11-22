@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve"
+  },
+  "include": [".storybook/main.ts", "stories", "utils"],
+  "exclude": ["node_modules"]
+}

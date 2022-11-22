@@ -1,0 +1,5 @@
+{
+  "extends": "@bauhow/tsconfig/next.json",
+  "include": ["lib/**/*.ts", "lib/**/*.tsx"],
+  "exclude": ["node_modules"]
+}
