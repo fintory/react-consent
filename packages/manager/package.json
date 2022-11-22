@@ -1,6 +1,6 @@
 {
   "name": "@react-consent/manager",
-  "version": "0.0.5",
+  "version": "0.2.0",
   "license": "MIT",
   "url": "https://fintory.com/oss/consent-manager",
   "repository": {
@@ -24,6 +24,7 @@
   "unpkg": "./dist/client.umd.js",
   "types": "./dist/client.d.ts",
   "files": [
+    "package.json",
     "dist"
   ],
   "scripts": {

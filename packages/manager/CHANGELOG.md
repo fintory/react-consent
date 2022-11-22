@@ -1,5 +1,11 @@
 # @react-consent/manager
 
+## 0.2.0
+
+### Minor Changes
+
+- [`21bcc84`](https://github.com/fintory/react-consent/commit/21bcc842022bc4852e0a31ae56b7d358ba85859f) Thanks [@iduuck](https://github.com/iduuck)! - add ability to `saveConsent` without prior setting of preferences (handy for `saveAll`)
+
 ## 0.0.4
 
 ### Patch Changes

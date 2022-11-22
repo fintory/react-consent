@@ -1,5 +1,11 @@
 import Cookies from "js-cookie";
-import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
+import React, {
+  PropsWithChildren,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { parseCookie } from "../shared/parseCookie";
 import {
   ConsentCategoryConsent,
@@ -29,7 +35,7 @@ export function createConsentManagerProvider<Category extends string>(
     defaultIntegrationsConsent,
   }: Required<
     Pick<ConsentManagerConfiguration<Category>, NeededConfigurationKeys>
-  > & { saveCookie: (consent: ConsentCookieValue<Category>) => string },
+  > & { saveCookie: (consent: ConsentCookieValue<Category>) => string }
 ) {
   return function ConsentManagerProvider({
     children,
@@ -41,16 +47,16 @@ export function createConsentManagerProvider<Category extends string>(
      * Handling the raw cookie
      */
     const [cookieValue, setCookieValue] = useState(() =>
-      Cookies.get(cookieName),
+      Cookies.get(cookieName)
     );
     const currentConsent = useMemo(
       () =>
         parseCookie(
           cookieValue,
           defaultCategoryConsent,
-          defaultIntegrationsConsent,
+          defaultIntegrationsConsent
         ),
-      [cookieValue],
+      [cookieValue]
     );
 
     /**
@@ -63,17 +69,17 @@ export function createConsentManagerProvider<Category extends string>(
         typeof consentDate === "undefined"
           ? undefined
           : integrations.some(
-              integration =>
-                integration.addedDate.getTime() > consentDate.getTime(),
+              (integration) =>
+                integration.addedDate.getTime() > consentDate.getTime()
             ),
-      [consentDate],
+      [consentDate]
     );
 
     /**
      * Execution
      */
     const executeConsent = (
-      consent: ConsentCookieValue<Category> = currentConsent,
+      consent: ConsentCookieValue<Category> = currentConsent
     ) => {
       onConsentSaved(consent ?? currentConsent);
       setShouldBeDisplayed(false);
@@ -101,11 +107,18 @@ export function createConsentManagerProvider<Category extends string>(
     const [integrationPreferences, setIntegrationPreferences] =
       useState<ConsentIntegrationConsent>(currentConsent.integrations);
 
-    const saveConsent = () => {
+    const saveConsent = (opts?: {
+      categories?: ConsentCategoryConsent<Category>;
+      integrations?: ConsentIntegrationConsent;
+    }) => {
+      // Load the given configuration into the state of the provider.
+      if (opts?.categories) setCategoryPreferences(opts.categories)
+      if (opts?.integrations) setIntegrationPreferences(opts.integrations)
+
       const consent: ConsentCookieValue<Category> = {
         consentDate: new Date(),
-        categories: categoryPreferences,
-        integrations: integrationPreferences,
+        categories: opts?.categories ?? categoryPreferences,
+        integrations: opts?.integrations ?? integrationPreferences,
       };
 
       const value = saveCookie(consent);
@@ -120,12 +133,12 @@ export function createConsentManagerProvider<Category extends string>(
         value={{
           // Preferences
           categoryPreferences,
-          setCategoryPreferences: prefs =>
-            setCategoryPreferences(p => ({ ...p, ...prefs })),
+          setCategoryPreferences: (prefs) =>
+            setCategoryPreferences((p) => ({ ...p, ...prefs })),
           integrationPreferences,
-          setIntegrationPreferences: prefs =>
+          setIntegrationPreferences: (prefs) =>
             // @ts-expect-error: This is correctly implemented.
-            setIntegrationPreferences(p => ({ ...p, ...prefs })),
+            setIntegrationPreferences((p) => ({ ...p, ...prefs })),
 
           executeConsent,
           saveConsent,
