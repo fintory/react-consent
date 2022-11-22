@@ -1,5 +1,11 @@
 # @react-consent/manager
 
+## 0.0.2
+
+### Patch Changes
+
+- fix default export
+
 ## 0.0.1
 
 ### Patch Changes

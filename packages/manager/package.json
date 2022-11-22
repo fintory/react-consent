@@ -1,6 +1,6 @@
 {
   "name": "@react-consent/manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "url": "https://fintory.com/oss/consent-manager",
   "repository": {
@@ -11,9 +11,11 @@
     "Nick Schmidt <nick@fintory.com>"
   ],
   "exports": {
-    "require": "./dist/client.cjs",
-    "default": "./dist/client.mjs",
-    "types": "./dist/client.d.ts"
+    ".": {
+      "types": "./dist/client.d.ts",
+      "require": "./dist/client.cjs",
+      "default": "./dist/client.mjs"
+    }
   },
   "main": "./dist/client.cjs",
   "module": "./dist/client.mjs",
