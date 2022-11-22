@@ -5,14 +5,14 @@
   "url": "https://fintory.com/oss/consent-manager",
   "repository": {
     "type": "git",
-    "url": "github.com/fintory/react-consent.git"
+    "url": "github.com/fintory/react-consent.git",
+    "directory": "packages/manager"
   },
   "contributors": [
     "Nick Schmidt <nick@fintory.com>"
   ],
   "exports": {
     ".": {
-      "types": "./dist/client.d.ts",
       "require": "./dist/client.cjs",
       "default": "./dist/client.mjs"
     }
@@ -20,13 +20,16 @@
   "main": "./dist/client.cjs",
   "module": "./dist/client.mjs",
   "unpkg": "./dist/client.umd.js",
+  "types": "./dist/client.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint .",
     "build": "microbundle lib/client.ts",
     "prepublish": "pnpm run clean && pnpm run build",
     "clean": "rimraf dist/"
   },
-  "types": "./dist/client.d.ts",
   "peerDependencies": {
     "js-cookie": "^2.0.0 || ^3.0.0",
     "react": "^18.0.0",

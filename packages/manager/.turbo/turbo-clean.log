@@ -1,5 +1,0 @@
-[32m@react-consent/manager:clean[0m: cache hit, replaying output [2m5132899a018e276f[0m
-[32m@react-consent/manager:clean: [0m
-[32m@react-consent/manager:clean: [0m> @react-consent/manager@0.0.1-alpha.0 clean /Users/nick/dev/consent-manager/packages/manager
-[32m@react-consent/manager:clean: [0m> rimraf dist/
-[32m@react-consent/manager:clean: [0m
