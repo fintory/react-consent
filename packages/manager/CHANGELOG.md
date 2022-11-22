@@ -1,5 +1,11 @@
 # @react-consent/manager
 
+## 0.0.4
+
+### Patch Changes
+
+- [`c78e08d`](https://github.com/fintory/react-consent/commit/c78e08dcac46ec4cac811e90586de5a1fa40eaab) Thanks [@iduuck](https://github.com/iduuck)! - make lib work
+
 ## 0.0.3
 
 ### Patch Changes
