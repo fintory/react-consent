@@ -1,7 +1,6 @@
 import Cookies from "js-cookie";
 import React, {
   PropsWithChildren,
-  useCallback,
   useEffect,
   useMemo,
   useState,
