@@ -14,7 +14,7 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "moduleResolution": "nodenext",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "esModuleInterop": true
   }
 }
