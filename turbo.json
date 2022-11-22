@@ -6,8 +6,9 @@
     },
     "test": {},
     "lint": {},
+    "clean": {},
     "build": {
-      "outputs": ["dist/", "build/"]
+      "outputs": ["dist/"]
     }
   }
 }

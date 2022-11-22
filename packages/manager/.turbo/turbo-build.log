@@ -1,0 +1,14 @@
+[32m@react-consent/manager:build[0m: cache hit, replaying output [2mdf01f22746c84930[0m
+[32m@react-consent/manager:build: [0m
+[32m@react-consent/manager:build: [0m> @react-consent/manager@0.0.1-alpha.0 build /Users/nick/dev/consent-manager/packages/manager
+[32m@react-consent/manager:build: [0m> microbundle lib/client.ts
+[32m@react-consent/manager:build: [0m
+[32m@react-consent/manager:build: [0mBuild "@react-consent/manager" to dist:
+[32m@react-consent/manager:build: [0m       1106 B: client.js.gz
+[32m@react-consent/manager:build: [0m        976 B: client.js.br
+[32m@react-consent/manager:build: [0m        963 B: client.modern.mjs.gz
+[32m@react-consent/manager:build: [0m        840 B: client.modern.mjs.br
+[32m@react-consent/manager:build: [0m       1074 B: client.mjs.gz
+[32m@react-consent/manager:build: [0m        946 B: client.mjs.br
+[32m@react-consent/manager:build: [0m       1192 B: client.umd.js.gz
+[32m@react-consent/manager:build: [0m       1046 B: client.umd.js.br

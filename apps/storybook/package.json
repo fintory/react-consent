@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "start-storybook -p 3002 --quiet --no-open",
-    "build": "build-storybook --quiet",
+    "dev": "start-storybook -p 1337 --quiet --no-open",
+    "build-storybook": "build-storybook --quiet",
     "lint": "eslint ."
   },
   "dependencies": {

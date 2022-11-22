@@ -1,5 +1,5 @@
 {
-  "extends": "@bauhow/tsconfig/next.json",
-  "include": ["lib/**/*.ts", "lib/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "extends": "./tsconfig.build.json",
+  "include": ["rollup.config.ts", "lib"],
+  "exclude": ["**/*.test.ts"]
 }

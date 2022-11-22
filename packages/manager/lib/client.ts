@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import Cookies from "js-cookie";
 import { createConsentContext } from "./client/context";
-import {
+import { createConsentManagerProvider } from "./client/component";
+import type {
   ConsentCategoryConsent,
   ConsentCookieValue,
   ConsentManagerConfiguration,
 } from "./shared/types";
-import { createConsentManagerProvider } from "./client/component";
 
 export function createConsentManager<Category extends string>({
   categories,
