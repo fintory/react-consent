@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "start-storybook -p 1337 --quiet --no-open",
     "build-storybook": "build-storybook --quiet",
-    "lint": "eslint ."
+    "lint": "eslint . --ext tsx,ts"
   },
   "dependencies": {
     "@react-consent/manager": "workspace:*",

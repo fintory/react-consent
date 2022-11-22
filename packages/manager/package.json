@@ -1,6 +1,6 @@
 {
   "name": "@react-consent/manager",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "url": "https://fintory.com/oss/consent-manager",
   "repository": {
@@ -12,7 +12,7 @@
     "Nick Schmidt <nick@fintory.com>"
   ],
   "exports": {
-    "package.json": "./package.json",
+    "./package.json": "./package.json",
     ".": {
       "types": "./dist/client.d.ts",
       "require": "./dist/client.cjs",
@@ -27,7 +27,7 @@
     "dist"
   ],
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . --ext tsx,ts",
     "build": "microbundle lib/client.ts --globals react=React --compress false --jsx React.createElement",
     "prepublish": "pnpm run clean && pnpm run build",
     "clean": "rimraf dist/"
