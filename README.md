@@ -1,4 +1,4 @@
-# <img src="/assets/logo.png" alt="react-consent" width="167.5px" />
+# ![react-consent](assets/banner.jpg)
 
 Your type-safe toolkit for building your own cookie-consent banner mechanism.
 
