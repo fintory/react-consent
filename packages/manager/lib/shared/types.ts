@@ -86,7 +86,7 @@ export type ConsentManagerContextValue<Category extends string> = {
    */
   categoryPreferences: ConsentCategoryConsent<Category>;
   setCategoryPreferences: (
-    preferences: Partial<ConsentCategoryConsent<Category>>,
+    preferences: Partial<ConsentCategoryConsent<Category>>
   ) => void;
 
   /**
@@ -94,7 +94,7 @@ export type ConsentManagerContextValue<Category extends string> = {
    */
   integrationPreferences: ConsentIntegrationConsent;
   setIntegrationPreferences: (
-    preferences: Partial<ConsentIntegrationConsent>,
+    preferences: Partial<ConsentIntegrationConsent>
   ) => void;
 
   /**
@@ -141,5 +141,8 @@ export type ConsentManagerContextValue<Category extends string> = {
    * Simple function for saving the consent to a cookie named by the config
    * object.
    */
-  saveConsent: () => void;
+  saveConsent: (opts?: {
+    categories?: ConsentCategoryConsent<Category>;
+    integrations?: ConsentIntegrationConsent;
+  }) => void;
 };

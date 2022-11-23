@@ -1,10 +1,5 @@
 import Cookies from "js-cookie";
-import React, {
-  PropsWithChildren,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
 import { parseCookie } from "../shared/parseCookie";
 import {
   ConsentCategoryConsent,
@@ -106,13 +101,12 @@ export function createConsentManagerProvider<Category extends string>(
     const [integrationPreferences, setIntegrationPreferences] =
       useState<ConsentIntegrationConsent>(currentConsent.integrations);
 
-    const saveConsent = (opts?: {
-      categories?: ConsentCategoryConsent<Category>;
-      integrations?: ConsentIntegrationConsent;
-    }) => {
+    const saveConsent: ConsentManagerContextValue<Category>["saveConsent"] = (
+      opts
+    ) => {
       // Load the given configuration into the state of the provider.
-      if (opts?.categories) setCategoryPreferences(opts.categories)
-      if (opts?.integrations) setIntegrationPreferences(opts.integrations)
+      if (opts?.categories) setCategoryPreferences(opts.categories);
+      if (opts?.integrations) setIntegrationPreferences(opts.integrations);
 
       const consent: ConsentCookieValue<Category> = {
         consentDate: new Date(),
