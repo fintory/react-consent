@@ -7,6 +7,8 @@
     "test": {},
     "lint": {},
     "clean": {},
+    "start-storybook": {},
+    "build-storybook": {},
     "build": {
       "outputs": ["dist/"]
     }

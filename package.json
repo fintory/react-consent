@@ -11,7 +11,9 @@
     "dev": "turbo run dev --no-cache --parallel --continue",
     "lint": "turbo run lint",
     "test": "turbo run test",
-    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
+    "build-storybook": "turbo run build-storybook",
+    "start-storybook": "turbo run start-storybook"
   },
   "devDependencies": {
     "eslint": "8.23.1",

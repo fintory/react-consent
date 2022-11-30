@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "start-storybook -p 1337 --quiet --no-open",
+    "start-storybook": "start-storybook -p 1337 --quiet --no-open",
     "build-storybook": "build-storybook --quiet",
     "lint": "eslint . --ext tsx,ts"
   },
@@ -11,8 +11,7 @@
     "@react-consent/manager": "workspace:*",
     "@storybook/react": "^6.5.13",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "typescript": "^4.9.3"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.5.13",
@@ -21,6 +20,7 @@
     "@storybook/addons": "^6.5.13",
     "@storybook/core-common": "^6.5.13",
     "@types/react": "^18.0.24",
-    "@types/react-dom": "^18.0.8"
+    "@types/react-dom": "^18.0.8",
+    "typescript": "^4.9.3"
   }
 }
