@@ -44,7 +44,6 @@ importers:
       '@storybook/react': 6.5.13_lb6du3saekb5anf2gjv3wxj3oq
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      typescript: 4.9.3
     devDependencies:
       '@storybook/addon-actions': 6.5.13_biqbaboplfbrettd7655fr4n2y
       '@storybook/addon-docs': 6.5.13_lb6du3saekb5anf2gjv3wxj3oq
@@ -53,6 +52,7 @@ importers:
       '@storybook/core-common': 6.5.13_lb6du3saekb5anf2gjv3wxj3oq
       '@types/react': 18.0.25
       '@types/react-dom': 18.0.9
+      typescript: 4.9.3
 
   packages/manager:
     specifiers:
