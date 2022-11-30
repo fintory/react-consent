@@ -1,7 +1,9 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { action } from "@storybook/addon-actions";
 import { Story } from "@storybook/react";
 import { createConsentManagerComponent } from "../utils/template";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "react-consent/Basic Examples",
 };
@@ -18,7 +20,7 @@ const factory = createConsentManagerComponent(action("Consent saved"), {
   ],
 });
 
-export const Categories: Story<{}> = () =>
+export const Categories: Story<unknown> = () =>
   factory(({ useConsentManager }) => {
     const {
       categories,
@@ -54,7 +56,7 @@ export const Categories: Story<{}> = () =>
     );
   });
 
-export const Integrations: Story<{}> = () =>
+export const Integrations: Story<unknown> = () =>
   factory(({ useConsentManager }) => {
     const {
       integrations,
@@ -92,7 +94,7 @@ export const Integrations: Story<{}> = () =>
     );
   });
 
-export const Mixed: Story<{}> = () =>
+export const Mixed: Story<unknown> = () =>
   factory(({ useConsentManager }) => {
     const {
       categories,

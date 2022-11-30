@@ -2,6 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { Story } from "@storybook/react";
 import { createConsentManagerComponent } from "../utils/template";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: "react-consent/`shouldBeDisplayed` prop",
 };
@@ -18,7 +19,7 @@ const factory = createConsentManagerComponent(action("Consent saved"), {
   ],
 });
 
-export const ButtonToggle: Story<{}> = () =>
+export const ButtonToggle: Story<unknown> = () =>
   factory(({ useConsentManager }) => {
     const {
       categories,
@@ -27,6 +28,7 @@ export const ButtonToggle: Story<{}> = () =>
       saveConsent,
       shouldBeDisplayed,
       setShouldBeDisplayed,
+      // eslint-disable-next-line
     } = useConsentManager();
 
     return (
