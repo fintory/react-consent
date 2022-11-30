@@ -1,5 +1,5 @@
 import Cookies from "js-cookie";
-import React, { PropsWithChildren, useEffect, useMemo, useState } from "react";
+import React, { ReactNode, useEffect, useMemo, useState } from "react";
 import { parseCookie } from "../shared/parseCookie";
 import {
   ConsentCategoryConsent,
@@ -34,9 +34,12 @@ export function createConsentManagerProvider<Category extends string>(
   return function ConsentManagerProvider({
     children,
     onConsentSaved,
-  }: PropsWithChildren<{
+  }: {
+    children:
+      | ReactNode
+      | ((ctx: ConsentManagerContextValue<Category>) => ReactNode);
     onConsentSaved: (consent: ConsentCookieValue<Category>) => void;
-  }>) {
+  }) {
     /**
      * Handling the raw cookie
      */
@@ -121,38 +124,38 @@ export function createConsentManagerProvider<Category extends string>(
       setCookieValue(value);
     };
 
+    const contextValue: ConsentManagerContextValue<Category> = {
+      // Preferences
+      categoryPreferences,
+      setCategoryPreferences: (prefs) =>
+        setCategoryPreferences((p) => ({ ...p, ...prefs })),
+      integrationPreferences,
+      setIntegrationPreferences: (prefs) =>
+        // @ts-expect-error: OK.
+        setIntegrationPreferences((p) => ({ ...p, ...prefs })),
+
+      executeConsent,
+      saveConsent,
+
+      // Integrations
+      integrations,
+
+      // Categories
+      categories,
+
+      // Visual
+      shouldBeDisplayed,
+      setShouldBeDisplayed,
+
+      // Date stuff
+      consentDate,
+      hasConsentGiven,
+      changedSinceConsentDate,
+    };
+
     return (
-      <Context.Provider
-        value={{
-          // Preferences
-          categoryPreferences,
-          setCategoryPreferences: (prefs) =>
-            setCategoryPreferences((p) => ({ ...p, ...prefs })),
-          integrationPreferences,
-          setIntegrationPreferences: (prefs) =>
-            // @ts-expect-error: This is correctly implemented.
-            setIntegrationPreferences((p) => ({ ...p, ...prefs })),
-
-          executeConsent,
-          saveConsent,
-
-          // Integrations
-          integrations,
-
-          // Categories
-          categories,
-
-          // Visual
-          shouldBeDisplayed,
-          setShouldBeDisplayed,
-
-          // Date stuff
-          consentDate,
-          hasConsentGiven,
-          changedSinceConsentDate,
-        }}
-      >
-        {children}
+      <Context.Provider value={contextValue}>
+        {typeof children === "function" ? children(contextValue) : children}
       </Context.Provider>
     );
   };

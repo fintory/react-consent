@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.build.json",
-  "include": ["rollup.config.ts", "lib"],
-  "exclude": ["**/*.test.ts"]
+  "types": ["@testing-library/jest-dom"],
+  "include": ["rollup.config.ts", "lib", "jest.setup.ts"]
 }

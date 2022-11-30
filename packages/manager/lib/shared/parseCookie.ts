@@ -4,12 +4,12 @@ import type {
   ConsentCookieValue,
 } from "./types";
 
-export const parseCookie = (
+export function parseCookie<T extends string = string>(
   cookieValue: string | undefined,
-  defaultCategoriesConsent: ConsentCategoryConsent<string>,
-  defaultIntegrationsConsent: ConsentIntegrationConsent = {},
-): ConsentCookieValue<string> => {
-  let consentCookie: ConsentCookieValue<string> = {
+  defaultCategoriesConsent: ConsentCategoryConsent<T>,
+  defaultIntegrationsConsent: ConsentIntegrationConsent = {}
+): ConsentCookieValue<T> {
+  let consentCookie: ConsentCookieValue<T> = {
     consentDate: undefined,
     categories: defaultCategoriesConsent,
     integrations: defaultIntegrationsConsent,
@@ -32,4 +32,4 @@ export const parseCookie = (
   }
 
   return consentCookie;
-};
+}

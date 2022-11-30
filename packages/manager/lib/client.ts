@@ -33,6 +33,7 @@ export function createConsentManager<Category extends string>({
   };
 
   return {
+    categories,
     ConsentManagerContext: Context,
     ConsentManagerProvider: createConsentManagerProvider(Context, {
       saveCookie,
