@@ -3,6 +3,15 @@ import { parseCookie } from "../../lib/shared/parseCookie";
 import { ConsentCookieValue } from "../../lib/shared/types";
 
 describe("parseCookie", () => {
+  beforeAll(() => {
+    jest.useFakeTimers().setSystemTime(new Date());
+  });
+
+  afterAll(() => {
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
+  });
+
   it("works with undefined", () => {
     const value = parseCookie(undefined, { cat1: true, cat2: false });
 
@@ -14,7 +23,7 @@ describe("parseCookie", () => {
   });
 
   it("works with value", () => {
-    const date = new Date()
+    const date = new Date();
 
     const value = parseCookie(
       JSON.stringify({
@@ -26,6 +35,7 @@ describe("parseCookie", () => {
     );
 
     expect(value).toMatchObject({
+      consentDate: date,
       categories: { cat3: false, cat2: true },
       integrations: {},
     });
