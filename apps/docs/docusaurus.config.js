@@ -36,7 +36,7 @@ const config = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/fintory/react-consent/tree/main/apps/',
+            'https://github.com/fintory/react-consent/tree/main/apps/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
