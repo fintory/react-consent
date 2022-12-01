@@ -26,10 +26,16 @@
 
 This is the manager package we are using to build the logical ground of the whole package family. Use the `@react-consent/manager` package to power your React application with the almighty GDPR-compliant cookie consent banner.
 
+[Read more →](https://react-consent-docs.vercel.app/manager/getting-started)
+
 #### `@react-consent/prebuilt`
 
 **Coming soon!** These prebuilt components will help you, get up and running easily.
 
-## License
+[Read more →](https://react-consent-docs.vercel.app/prebuilt/getting-started)
+
+---
+
+### License
 
 License under MIT license.
