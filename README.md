@@ -1,12 +1,13 @@
-![react-consent](assets/banner.jpg)
+[![react-consent](assets/banner.jpg)](https://react-consent-docs.vercel.app/)
 
 <p align="center"><b>Your type-safe toolkit for building your own cookie-consent banner mechanism.</b></p>
 <p align="center">
   <a href="https://github.com/fintory/react-consent/actions/workflows/lint.yml"><img src="https://github.com/fintory/react-consent/actions/workflows/lint.yml/badge.svg" /></a>&nbsp;<a href="https://github.com/fintory/react-consent/actions/workflows/test.yml"><img src="https://github.com/fintory/react-consent/actions/workflows/test.yml/badge.svg" /></a>
 </p>
-<p>&nbsp;</p>
 
-## About `react-consent`
+<h3 align="center"><a href="https://react-consent-docs.vercel.app/">Read the docs</a></h3>
+
+---
 
 ### What is this?
 
